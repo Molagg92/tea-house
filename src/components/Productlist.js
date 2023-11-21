@@ -1,6 +1,6 @@
 import React from "react";
 import Product from "./Product";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 
 const mainProductList = [
   {
@@ -25,7 +25,7 @@ function ProductList(){
   return (
     <React.Fragment>
       <hr/>
-      {props.productList.map ((product, index) =>
+      {mainProductList.map ((product, index) =>
         <Product
         blend = {product.blend}
         name = {product.name}
@@ -36,8 +36,8 @@ function ProductList(){
       );
 }
 
-ProductList.PropTypes = {
-  productList: PropTypes.array
-}
+// ProductList.PropTypes = {
+//   productList: PropTypes.array
+// }
 
 export default ProductList;
