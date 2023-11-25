@@ -2,6 +2,7 @@ import React from 'react';
 import NewProductForm from './NewProductForm';
 import ProductList from './ProductList';
 import ProductDetail from './ProductDetail';
+import EditProductForm from './EditProductForm';
 
 class ProductControl extends React.Component {
 
@@ -16,10 +17,11 @@ class ProductControl extends React.Component {
   }
 
   handleClick = () => {
-    if (this.state.selectedProduct != null) {
+   if (this.state.selectedProduct != null) {
       this.setState({
         formVisibleOnPage: false,
-        selectedProduct: null
+        selectedProduct: null,
+        editing: false
       });
     } else {
       this.setState(prevState => ({
@@ -52,10 +54,27 @@ class ProductControl extends React.Component {
     this.setState({editing: true});
   }
 
+  handleEditingProductInList = (productToEdit) => {
+    const editedMainProductList = this.state.mainProductList
+      .filter(product => product.id !== this.state.selectedProduct.id)
+      .concat(productToEdit);
+    this.setState({
+        mainProductList: editedMainProductList,
+        editing: false,
+        selectedProduct: null
+      });
+  }
+
   render(){
     let currentlyVisibleState = null;
     let buttonText = null;
-    if (this.state.selectedProduct != null) {
+    if (this.state.editing ) {      
+      currentlyVisibleState = <EditProductForm 
+                                product = {this.state.selectedProduct}
+                                onEditProduct = {this.handleEditingProductInList}
+                                />
+    buttonText = "Return to Product List";
+    } else if (this.state.selectedProduct != null) {
       currentlyVisibleState = <ProductDetail 
                                 product = {this.state.selectedProduct} 
                                 onClickingDelete = {this.handleDeletingProduct}
