@@ -7,7 +7,8 @@ class ProductControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      formVisibleOnPage: false
+      formVisibleOnPage: false,
+      mainProductList: []
     };
   }
 
@@ -17,14 +18,20 @@ class ProductControl extends React.Component {
     }));
   }
 
+  handleAddingNewProductToList = (newProduct) => {
+    const newMainProductList = this.state.mainProductList.concat(newProduct);
+    this.setState({mainProductList: newMainProductList,
+                  formVisibleOnPage: false });
+  }
+
   render(){
     let currentlyVisibleState = null;
     let buttonText = null;
     if (this.state.formVisibleOnPage){
-      currentlyVisibleState = <NewProductForm />
+      currentlyVisibleState = <NewProductForm onNewProductCreation={this.handleAddingNewProductToList} />
       buttonText = "Return to Ticket List";
     } else {
-      currentlyVisibleState = <ProductList />
+      currentlyVisibleState = <ProductList productList={this.state.mainProductList} />
       buttonText = "Add Ticket";
     }
     return (
