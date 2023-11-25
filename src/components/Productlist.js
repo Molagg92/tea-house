@@ -6,18 +6,21 @@ function ProductList(props){
   return (
     <React.Fragment>
       <hr/>
-      {props.productList.map ((product, index) =>
-         <Product blend = {product.blend}
+      {props.productList.map ((product) =>
+         <Product whenProductClicked = { props.onProductSelection }
+                  blend = {product.blend}
                   name = {product.name}
                   weight = {product.weight}
-                  key={index}/> 
+                  id={product.id}
+                  key={product.id}/> 
         )}
     </React.Fragment>
       );
 }
 
 ProductList.propTypes = {
-  productList: PropTypes.array
+  productList: PropTypes.array,
+  onProductSelection: PropTypes.func
 }
 
 export default ProductList;

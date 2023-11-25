@@ -1,16 +1,24 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-function Product(){
-  const name = "Thato";
-  const name2 = "Haley";
+function Product(props){
   return (
     <React.Fragment>
-      <h3>3a</h3>
-      <h3>{name} and {name2}</h3>
-      <p><em>Firebase entries not saving!</em></p>
-      <hr/>
+      <div onClick = {() => props.whenProductClicked(props.id)}>
+        <h3>{props.name} - {props.blend}</h3>
+        <p><em>{props.weight}</em></p>
+        <hr/>
+      </div>
     </React.Fragment>
   );
 }
+
+Product.propTypes = {
+  name: PropTypes.string,
+  blend: PropTypes.string,
+  weight: PropTypes.string,
+  id: PropTypes.string, // new PropType
+  whenProductClicked: PropTypes.func // new PropType
+};
 
 export default Product;

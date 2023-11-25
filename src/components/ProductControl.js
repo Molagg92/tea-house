@@ -1,6 +1,7 @@
 import React from 'react';
 import NewProductForm from './NewProductForm';
 import ProductList from './ProductList';
+import ProductDetail from './ProductDetail';
 
 class ProductControl extends React.Component {
 
@@ -8,14 +9,22 @@ class ProductControl extends React.Component {
     super(props);
     this.state = {
       formVisibleOnPage: false,
-      mainProductList: []
+      mainProductList: [],
+      selectedProduct: null
     };
   }
 
   handleClick = () => {
-    this.setState(prevState => ({
-      formVisibleOnPage: !prevState.formVisibleOnPage
-    }));
+    if (this.state.selectedProduct != null) {
+      this.setState({
+        formVisibleOnPage: false,
+        selectedProduct: null
+      });
+    } else {
+      this.setState(prevState => ({
+        formVisibleOnPage: !prevState.formVisibleOnPage,
+      }));
+    }
   }
 
   handleAddingNewProductToList = (newProduct) => {
@@ -24,14 +33,23 @@ class ProductControl extends React.Component {
                   formVisibleOnPage: false });
   }
 
+  handleChangingSelectedProduct = (id) => {
+    const selectedProduct = this.state.mainProductList.filter(product => product.id === id)[0];
+    this.setState({selectedProduct: selectedProduct});
+  }
+
   render(){
     let currentlyVisibleState = null;
     let buttonText = null;
-    if (this.state.formVisibleOnPage){
+    if (this.state.selectedProduct != null) {
+      currentlyVisibleState = <ProductDetail product = {this.state.selectedProduct} />
+      buttonText = "Return to Product List";
+    } 
+    else if (this.state.formVisibleOnPage){
       currentlyVisibleState = <NewProductForm onNewProductCreation={this.handleAddingNewProductToList} />
       buttonText = "Return to Ticket List";
     } else {
-      currentlyVisibleState = <ProductList productList={this.state.mainProductList} />
+      currentlyVisibleState = <ProductList productList={this.state.mainProductList} onProductSelection={this.handleChangingSelectedProduct} />
       buttonText = "Add Ticket";
     }
     return (
