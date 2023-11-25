@@ -37,20 +37,28 @@ class ProductControl extends React.Component {
     const selectedProduct = this.state.mainProductList.filter(product => product.id === id)[0];
     this.setState({selectedProduct: selectedProduct});
   }
+  
+  handleDeletingProduct = (id) => {
+    const newMainProductList = this.state.mainProductList.filter(product => product.id !== id);
+    this.setState({
+      mainProductList: newMainProductList,
+      selectedProduct: null
+    });
+  }
 
   render(){
     let currentlyVisibleState = null;
     let buttonText = null;
     if (this.state.selectedProduct != null) {
-      currentlyVisibleState = <ProductDetail product = {this.state.selectedProduct} />
+      currentlyVisibleState = <ProductDetail product = {this.state.selectedProduct} onClickingDelete = {this.handleDeletingProduct} />
       buttonText = "Return to Product List";
     } 
     else if (this.state.formVisibleOnPage){
       currentlyVisibleState = <NewProductForm onNewProductCreation={this.handleAddingNewProductToList} />
-      buttonText = "Return to Ticket List";
+      buttonText = "Return to Product List";
     } else {
       currentlyVisibleState = <ProductList productList={this.state.mainProductList} onProductSelection={this.handleChangingSelectedProduct} />
-      buttonText = "Add Ticket";
+      buttonText = "Add Product";
     }
     return (
       <React.Fragment>
@@ -59,7 +67,6 @@ class ProductControl extends React.Component {
       </React.Fragment>
     );
   }
-
 }
 
 export default ProductControl;
