@@ -24,7 +24,7 @@ _This was a mostly an excersize in what I have learned about JSX and React, a us
 * _After a few minutes, it will finish, finally you will run the command `npm run start`_
 
 ## Known Bugs
-_There is unfortunatly 1 bug I was not able to fix. after a sale is made from a batch of coffee, updating the batch of coffe for any reason at all, will reset the weight on the bach of coffee, back to 130. Please let me know if any more are discovered at `e92zambrano@outlook.com`_
+_At the moment, there are no know bugs, if any are discovered, please send your comments to `e92zambrano@outlook.com`_
 
 
 ## Available Scripts
@@ -33,31 +33,31 @@ In the project directory, you can run:
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+_Runs the app in the development mode._\
+_Open [http://localhost:3000](http://localhost:3000) to view it in your browser._
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+_The page will reload when you make changes._\
+_You may also see any lint errors in the console._
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+_Builds the app for production to the `build` folder._\
+_It correctly bundles React in production mode and optimizes the build for the best performance._
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+_The build is minified and the filenames include the hashes._\
+_Your app is ready to be deployed!_
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+_See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information._
 
 ### `npm run eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+_If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project._
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+_Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own._
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+_You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it._
 
 ## License
 
@@ -83,4 +83,4 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-_If you run into any issues or have questions, ideas or concerns, please reach out to me via email: Molagg92@gmail.com.  Contributions to the code are highly encouraged._
+_If you run into any issues or have questions, ideas or concerns, please reach out to me via email: `e92zambrano@outlook.com`.  Contributions to the code are highly encouraged._
