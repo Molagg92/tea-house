@@ -7,7 +7,14 @@ function EditProductForm (props) {
 
   function handleEditProductFormSubmission(event) {
     event.preventDefault();
-    props.onEditProduct({name: event.target.name.value, blend: event.target.blend.value, weight: event.target.weight.value, id: product.id});
+    props.onEditProduct({
+      name: event.target.name.value, 
+      blend: event.target.blend.value, 
+      weight: event.target.weight.value,
+      origin: event.target.origin.value, 
+      description: event.target.description.value,
+      price: event.target.price.value,
+      id: product.id});
   }
 
   return (

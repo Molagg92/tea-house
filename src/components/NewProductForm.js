@@ -8,7 +8,9 @@ function NewProductForm(props){
     event.preventDefault();
     props.onNewProductCreation({
       name: event.target.name.value, 
-      blend: event.target.blend.value, 
+      blend: event.target.blend.value,
+      description: event.target.description.value,
+      origin: event.target.origin.value, 
       weight: 130,
       price: 16.99, 
       id: v4()
@@ -18,7 +20,7 @@ function NewProductForm(props){
     <React.Fragment>
       <ReusableForm 
         formSubmissionHandler={handleNewProductFormSubmission}
-        buttonText="Submit!" />
+        buttonText="Add Tea Product!" />
     </React.Fragment>
   );
 }
