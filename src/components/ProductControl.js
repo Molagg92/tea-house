@@ -65,6 +65,17 @@ class ProductControl extends React.Component {
       });
   }
 
+  handleSellProductInList = (id) => {
+    let newSellProductList = this.state.mainProductList;
+    if(newSellProductList.filter(product => product.id === id)[0].weight >= 2){
+    newSellProductList.filter(product => product.id === id)[0].weight--;
+  }
+    else{
+      newSellProductList.filter(product => product.id === id)[0].weight = 0;
+    }
+    this.setState({mainProductList: newSellProductList, formVisibleOnPage: false});
+  }
+
   render(){
     let currentlyVisibleState = null;
     let buttonText = null;
@@ -88,7 +99,8 @@ class ProductControl extends React.Component {
     } else {
       currentlyVisibleState = <ProductList 
                                 productList={this.state.mainProductList} 
-                                onProductSelection={this.handleChangingSelectedProduct} />
+                                onProductSelection={this.handleChangingSelectedProduct}
+                                onSell={this.handleSellProductInList} />
       buttonText = "Add Product";
     }
     return (

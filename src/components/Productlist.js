@@ -8,9 +8,13 @@ function ProductList(props){
       <hr/>
       {props.productList.map ((product) =>
          <Product whenProductClicked = { props.onProductSelection }
-                  blend = {product.blend}
-                  name = {product.name}
-                  weight = {product.weight}
+                  whenSellClicked = { props.onSell }
+                  blend={product.blend}
+                  origin={product.origin}
+                  name={product.name}
+                  weight={product.weight}
+                  price={product.price}
+                  description={product.description}
                   id={product.id}
                   key={product.id}/> 
         )}
@@ -20,7 +24,8 @@ function ProductList(props){
 
 ProductList.propTypes = {
   productList: PropTypes.array,
-  onProductSelection: PropTypes.func
+  onProductSelection: PropTypes.func,
+  onSell: PropTypes.func
 }
 
 export default ProductList;

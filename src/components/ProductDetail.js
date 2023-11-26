@@ -8,6 +8,7 @@ function ProductDetail(props){
       <h1>Product Detail</h1>
       <h3>{product.name} - {product.blend}</h3>
       <p><em>{product.weight}</em></p>
+      <h6> price : {product.price}</h6>
       <button onClick={ props.onClickingEdit }>Update Product</button> 
       <button onClick={()=> onClickingDelete(product.id) }>Delete Tea Product </button> 
       <hr/>

@@ -9,7 +9,8 @@ function NewProductForm(props){
     props.onNewProductCreation({
       name: event.target.name.value, 
       blend: event.target.blend.value, 
-      weight: event.target.weight.value, 
+      weight: 130,
+      price: 16.99, 
       id: v4()
     });
   }
