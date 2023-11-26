@@ -17,6 +17,14 @@ function ReusableForm(props) {
         type='text'
         name='blend'
         placeholder='Blend/Roast' />
+        <input
+        type='number'
+        name='weight'
+        placeholder='weight' />
+        <input
+        type='number'
+        name='price'
+        placeholder='price' />
       <textarea
         name='description'
         placeholder='Give a description.' />

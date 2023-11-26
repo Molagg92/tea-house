@@ -8,6 +8,7 @@ function EditProductForm (props) {
   function handleEditProductFormSubmission(event) {
     event.preventDefault();
     props.onEditProduct({
+      ...product,
       name: event.target.name.value, 
       blend: event.target.blend.value, 
       weight: event.target.weight.value,
