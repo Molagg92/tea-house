@@ -18,10 +18,12 @@ _This was a mostly an excersize in what I have learned about JSX and React, a us
 
 ## Setup/Installation Requirements
 
-* _Open your terminal and CD into the Desktop or main directory_
+* _Open your terminal and `CD` into the Desktop or main directory_
 * _`git clone https://github.com/Molagg92/tea-house.git` this command will clone this project on your machine, this is the link to my presonal repo from Github_
-* _`npm run install` will get the packages needed to run the program_
-* _After a few minutes, it will finish, finally you will run the command `npm run start`_
+* _From here, `CD` into tea-house, this will bring you into the project folder!_
+* _Now run `npm run install`, this will get the packages needed to run the program_
+* _After a few minutes, it will finish! Finally you will run the command `npm run start`_
+* _Start making and selling your products!_
 
 ## Known Bugs
 _At the moment, there are no know bugs, if any are discovered, please send your comments to `e92zambrano@outlook.com`_
