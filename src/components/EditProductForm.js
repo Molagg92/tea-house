@@ -7,14 +7,18 @@ function EditProductForm (props) {
 
   function handleEditProductFormSubmission(event) {
     event.preventDefault();
+    
+    const editedWeight = parseInt(event.target.weight.value, 10);
+    const editedPrice = parseInt(event.target.weight.value, 10);
+
     props.onEditProduct({
       ...product,
       name: event.target.name.value, 
       blend: event.target.blend.value, 
-      weight: event.target.weight.value,
+      weight: editedWeight,
       origin: event.target.origin.value, 
       description: event.target.description.value,
-      price: event.target.price.value,
+      price:editedPrice,
       id: product.id});
   }
 

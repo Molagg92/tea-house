@@ -19,7 +19,7 @@ function Product(props){
     </React.Fragment>
   );
 } else {
-
+  return (
   <React.Fragment>
       <div onClick = {() => props.whenProductClicked(props.id)}>
         <h3>{props.name} - {props.blend}</h3>
@@ -28,6 +28,7 @@ function Product(props){
         <hr/>
       </div>
     </React.Fragment>
+  )
   }
 }
 
