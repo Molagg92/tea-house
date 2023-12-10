@@ -35,9 +35,9 @@ function Product(props){
 Product.propTypes = {
   name: PropTypes.string.isRequired,
   blend: PropTypes.string.isRequired,
-  origin: PropTypes.string,
-  weight: PropTypes.number,
-  price: PropTypes.number,
+  origin: PropTypes.string.isRequired,
+  weight: PropTypes.number.isRequired,
+  price: PropTypes.number.isRequired,
   description: PropTypes.string.isRequired,
   id: PropTypes.string,
   whenProductClicked: PropTypes.func

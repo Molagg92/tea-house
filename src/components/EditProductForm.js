@@ -31,8 +31,16 @@ function EditProductForm (props) {
   );
 }
 EditProductForm.propTypes = {
-  product: PropTypes.object,
-  onEditProduct: PropTypes.func
+  product: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    blend: PropTypes.string.isRequired,
+    weight: PropTypes.number.isRequired,
+    origin: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+  }).isRequired,
+  onEditProduct: PropTypes.func.isRequired,
 };
 
 export default EditProductForm;
